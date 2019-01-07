@@ -23,17 +23,18 @@ export default {
     },
     methods: {
         dragstart: function(e){
-            console.log(e)
+            console.log('start: ', e)
             this.sourceIndex = Number(e.target.id.match(/\d+/)[0]);
         },
         dragover: function(){},
         drop: function(e){
+            console.log('end: ', e)
             let { sourceIndex } = this._data,
                 targetIndex = this.getTargetIndex(e.path),
                 sourceEl = this.$children[sourceIndex],
                 direction = targetIndex - sourceIndex,
                 children = [];
-                
+            //debugger;    
             this.$children.forEach((item, index)=>{
                 if(targetIndex === index){
                     if(direction < 0) children.push(sourceEl);
@@ -43,7 +44,8 @@ export default {
                     children.push(item);
                 }
             });
-            this.initGridDragItem(children);
+            this.$children = children;
+            this.initGridDragItem(this.$children);
         },
         /**
          * 初始化元素的属性
