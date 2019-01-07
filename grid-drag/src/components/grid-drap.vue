@@ -34,7 +34,7 @@ export default {
                 sourceEl = this.$children[sourceIndex],
                 direction = targetIndex - sourceIndex,
                 children = [];
-            //debugger;    
+                   
             this.$children.forEach((item, index)=>{
                 if(targetIndex === index){
                     if(direction < 0) children.push(sourceEl);

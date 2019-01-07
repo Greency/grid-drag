@@ -2,7 +2,7 @@
   <div id="app">
    <gridDrap style="width: 300px;height: 300px">
      <gridDrapItem v-for="(item, index) in gridDrapItem" :key="index">
-       <div :style="'width: 100px; height: 100px; background-color:'+ item "></div>
+       <div style="box-sizing: border-box;width: 100px; height: 100px;border: 1px solid #ccc; line-height: 100px; text-align: center">{{item}}</div>
      </gridDrapItem>
    </gridDrap>
   </div>
@@ -16,7 +16,7 @@ export default {
   name: 'app',
   data(){
     return {
-      gridDrapItem: ['red', 'green', 'black', 'gray']
+      gridDrapItem: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     }
   },
   components: {
